@@ -57,7 +57,7 @@ class Aligner:
         return (T, m)
 
 def popen_io(cmd):
-    p = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    p = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=1, universal_newlines=True)
     def consume(s):
         for _ in s:
             pass
